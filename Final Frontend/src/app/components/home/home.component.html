@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+  <a class="navbar-brand" routerLink="/home">Show Time</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0" style="margin-left: 80%">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchFun(search)">Search</button>
+    </form>
+
+  </div>
+</nav>
+
+
+
+
+
+
+<div class="bg-light">
+ <div class="row" >
+   <!-- carousel -->
+     <div id="carouselExampleCaptions" class="carousel slide main-carousel col-12 " data-ride="carousel">
+
+     <div class="carousel-inner">
+       <div class="carousel-item active">
+         <img [src]="cards[cards.length -4].imageUrl" class="d-block w-100" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+           <h5>{{cards[cards.length -4].title}}</h5>
+           
+         </div>
+       </div>
+       <div class="carousel-item" *ngFor="let card of cards.slice(cards.length - 3)">
+         <img [src]="card.imageUrl" class="d-block w-100" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+           <h5>{{card.title}}</h5>
+          
+        </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
+</div>
+</div>
+
+<div class="fluid-container text-center p-5 ">
+  <div class="row">
+    <div class="col">
+      <img src="https://www.kindpng.com/picc/m/187-1876040_popcorn-and-movie-reel-transparent-background-hd-png.png" style="height: 300px; width: 600px;" class="img-fluid" alt="...">
+    </div>
+    <div class="col">
+      <br><br><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-primary  btn-lg rounded" routerLink="/login"  data-toggle="modal">&nbsp;&nbsp;LOGIN&nbsp;&nbsp;</button>
+      </div>
+      <br><br><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-success  btn-lg rounded" routerLink="/signup" >&nbsp;SIGN UP &nbsp;</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
